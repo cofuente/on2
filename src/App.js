@@ -2,9 +2,9 @@ import './App.css';
 
 function App() {
   return (
-    <div className="bg-pan-left">
-      <div>
-        CIRCLE GOES HERE
+    <div className='super'>
+      <div className='circle'>
+        <p className='count-text'>circle</p>
       </div>
     </div>
   );
