@@ -5,16 +5,22 @@ html {
   animation: color-change-3x 10s infinite alternate both;
   margin: 0;
   padding: 0;
+  top: 0;
+  left: 0;
   position: absolute;
 }
 body {
   margin: 0;
   padding: 0;
+  top: 0;
+  left: 0;
   position: absolute;
 }
 #root {
   margin: 0;
   padding: 0;
+  top: 0;
+  left: 0;
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -22,25 +28,55 @@ body {
 .super {
   margin: 0;
   padding: 0;
+  top: 0;
+  left: 0;
   position: absolute;
   width: 100%;
   height: 100%;
-  display:flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  justify-items: stretch;
+  align-items: center;
+  justify-content: center;
+}
+.circle {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background: #4554de;
+  width: 30vh;
+  height: 30vh;
+  -webkit-animation: pulsate 0.5s ease-in-out 4 both;
+  animation: pulsate 0.5s ease-in-out 4 both;
+}
+
+.circle-overlay {
+  z-index: 1;
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 30vh;
+  height: 30vh;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.circle {
-  border-radius: 50%;
-  background: #4554de;
+.overlay-text {
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
 }
-
-/* .color-change-2x {
-	-webkit-animation: color-change-2x 1s ease-in-out infinite alternate both;
-	        animation: color-change-2x 1s ease-in-out infinite alternate both;
-} */
 /**
  * ----------------------------------------
  * animation color-change-3x
@@ -51,7 +87,7 @@ body {
     background: #76c2ba;
   }
   50% {
-    background: #EDD1D4;
+    background: #edd1d4;
   }
   100% {
     background: #a6fff6;
@@ -62,12 +98,47 @@ body {
     background: #76c2ba;
   }
   50% {
-    background: #EDD1D4;
+    background: #edd1d4;
   }
   100% {
     background: #a6fff6;
   }
 }
+
+/**
+ * ----------------------------------------
+ * animation pulsate
+ * ----------------------------------------
+ */
+@-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 
 
 
